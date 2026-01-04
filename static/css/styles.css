@@ -1,0 +1,179 @@
+/* Palette & variables: couleurs globales utilisées partout (modifiez ici pour theming) */
+
+:root{
+  --bg: #f4fbfb;           /* ice / soft light background */
+  --card: #eaf7f6;         /* platinum card background */
+  --card-2: #dff6f6;       /* subtle tinted alternative for project blocks */
+  --muted: #cfeff1;        /* muted cyan tint */
+  --accent-color: #1aa1a8; /* turquoise */
+  --accent-2: #2b9aa4;     /* teal */
+  --hero-top: #06323a;     /* dark teal for hero (not black) */
+  --hero-bottom: #0b4850;  /* slightly lighter teal */
+  --shadow: rgba(6,50,58,0.06);
+}  
+*{box-sizing:border-box}
+html,body{height:100%}
+body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; background:var(--bg); color:#08323a; line-height:1.6} 
+.container{max-width:1100px;margin:0 auto;padding:28px}
+.site-header{background:transparent;padding:14px 0}
+.nav{display:flex;align-items:center;gap:16px}
+.brand{font-weight:700;color:var(--accent-color);text-decoration:none;font-size:1.2rem}
+.nav-links{list-style:none;padding:0;margin:0;display:flex;gap:12px;align-items:center;margin-left:auto}
+.nav-links a{display:inline-block;padding:6px 8px;border-radius:6px;background:transparent;color:var(--accent-color);border:none;box-shadow:none;text-decoration:none;font-weight:600;transition:color .12s, transform .12s}
+.nav-links a:hover{color:var(--accent-color);transform:translateY(-1px)}
+.nav-links a:focus{outline:2px solid rgba(47,155,176,.12);outline-offset:4px}
+
+/* Make header buttons sit close together */
+.nav > .btn-outline{margin-left:8px}
+.nav-toggle{display:none;background:transparent;border:1px solid rgba(6,50,58,.06);color:var(--muted);padding:8px;border-radius:8px}
+.btn{background:var(--accent-color);color:#fff;padding:8px 14px;border-radius:8px;text-decoration:none;border:none;cursor:pointer;transition:transform .15s, box-shadow .15s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(74,163,216,.12)}
+.btn-outline{background:#fff;color:var(--accent-color);border:1px solid rgba(6,50,58,.08);padding:8px 12px;border-radius:8px;text-decoration:none;box-shadow:0 6px 18px rgba(6,50,58,.04)}
+
+/* Contact section styling  */
+/* Contact card (form container) - footer style */
+.site-contact{background:linear-gradient(180deg,#eaf7f6,#f3fbfb);padding:40px 0;border-top:1px solid rgba(6,50,58,.02)} 
+.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;align-items:stretch} 
+.contact-left-card{max-width:none;width:100%;display:flex;flex-direction:column;justify-content:space-between;min-height:420px} 
+.contact-card{display:flex;flex-direction:column;justify-content:space-between;min-height:420px} 
+.contact-left-card{padding:18px;background:#fff;border-radius:12px;box-shadow:0 12px 30px rgba(29, 165, 192, 0.14), 0 4px 12px rgba(47,155,176,0.06);border-left:6px solid rgba(47,155,176,0.22);max-width:420px;transition:box-shadow .18s ease, transform .15s ease}
+.contact-left-title{margin:0 0 6px 0;color:var(--accent-color);font-size:1.4rem}
+.contact-left p{max-width:520px;color:#163f48}
+.contact-card{padding:20px;background:#fff;border-radius:12px;box-shadow:0 16px 44px rgba(47,155,176,0.12), 0 6px 18px rgba(47,155,176,0.06);border-left:6px solid rgba(47,155,176,0.18);transition:box-shadow .18s ease, transform .15s ease}
+.contact-card h3{margin:0 0 8px 0}
+.contact-card .contact-form{padding:0;margin:0}
+
+/* Hover lift with colored glow */
+.contact-left-card:hover, .contact-card:hover{transform:translateY(-6px);box-shadow:0 30px 70px rgba(47,155,176,0.18), 0 10px 30px rgba(47,155,176,0.09)}
+.form-row{display:flex;flex-direction:column;margin-bottom:12px}
+ .contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid rgba(6,50,58,.08);background:#fff;color:#08323a}
+.btn-lg{padding:10px 16px;border-radius:10px}
+
+/* Block-style contact links */
+.contact-link--block{width:100%;justify-content:flex-start;padding:12px 14px;border-radius:12px;gap:12px}
+.contact-link--block .icon{width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(47,155,176,0.12);color:var(--accent-color)}
+.contact-link--block .label{font-weight:700;color:#13333a}
+.contact-link--block{background:#fff;border:1px solid rgba(6,50,58,.04);box-shadow:0 8px 20px rgba(6,50,58,.04)}
+.contact-link--block:hover{transform:translateX(8px);box-shadow:0 20px 48px rgba(6,50,58,.12)}
+/* Ensure branded variants keep icon contrast */
+/* Make LinkedIn/GitHub show a white circular badge with the brand glyph inside */
+.contact-link--linkedin .icon{background:#fff;color:#0a66c2;width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.contact-link--github .icon{background:#fff;color:#125e63;width:36px;height:36px;flex:0 0 36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+.contact-links{display:flex;flex-direction:column;gap:12px;align-items:center;max-width:360px;margin:18px auto 0}
+
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr}.site-contact{padding:28px 0}.contact-card{margin-top:18px}}
+@media (max-width:520px){.contact-grid{padding:0 12px;gap:12px}}
+
+/* Contact links footer */
+ .sep{border:0;height:1px;background:linear-gradient(90deg, rgba(70, 130, 160, 0.03), rgba(6,50,58,.0));margin:14px 0;border-radius:2px}
+.contact-footer{text-align:center}
+.contact-links{display:flex;flex-direction:column;gap:12px;align-items:center;max-width:360px;margin:12px auto 0} 
+ .contact-link{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:10px;background:#fff;color:var(--accent-color);text-decoration:none;border:1px solid rgba(6,50,58,.06);box-shadow:0 8px 20px rgba(6,50,58,.04);font-weight:600;font-size:0.95rem}
+.contact-link .icon{width:18px;height:18px;flex:0 0 18px;color:var(--accent-color)}
+.contact-link svg{display:block}
+.contact-link .label{white-space:nowrap}
+.contact-link:hover{transform:translateX(6px) scale(1.02);box-shadow:0 18px 44px rgba(6,50,58,.10)}
+
+/* Brand colors for LinkedIn & GitHub (lighter/softer) */
+.contact-link--linkedin{background:linear-gradient(90deg,#0a66c2,#0a5bb7);color:#fff;border:none}
+.contact-link--linkedin .icon{filter:brightness(0) invert(1)}
+.contact-link--github{background:linear-gradient(90deg,var(--accent-color),#2b9aa4);color:#fff;border:none}
+.contact-link--github .icon{filter:brightness(0) invert(1)}
+
+@media (max-width:520px){.contact-links{gap:10px}.contact-link{padding:8px 10px;font-size:0.9rem}}
+
+.hero{padding:40px 0}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:center}
+
+/* Hero (page d'accueil) : grand titre en arrière-plan, avatar à droite, texte à gauche */
+/* Hero landing redesign (fullscreen, big background title, centered avatar) */
+.hero-landing{min-height:84vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(180deg,var(--hero-top),var(--hero-bottom));color:#f8f6f1}  
+.hero-landing .hero-bg-title{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-weight:900;letter-spacing:0.02em;font-size:clamp(5.5rem,18vw,16rem);color:rgba(255,255,255,0.07);pointer-events:none;z-index:0}
+.landing-grid{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:center;z-index:2}
+.landing-name{font-size:2.6rem;margin:6px 0 6px 0;color:#fff}
+.landing-lead{color:rgba(255,255,255,0.78);max-width:540px}
+.landing-avatar{width:320px;max-width:100%;border-radius:12px;border:1px solid rgba(255,255,255,.04);box-shadow:0 30px 70px rgba(6,50,58,.55);transform:translateY(-6%);display:block} /* reduced size */
+.hero-landing .btn{box-shadow:0 16px 40px rgba(6,50,58,.45)}
+.hero-arrow{position:absolute;right:40px;top:28px;color:rgba(255,255,255,.65);font-size:1.5rem;text-decoration:none;z-index:3}
+
+/* Responsive tweaks */
+@media (max-width:900px){.landing-grid{grid-template-columns:1fr;gap:24px}.landing-avatar{width:260px;margin:0 auto;transform:none}.hero-bg-title{font-size:clamp(4rem,28vw,9rem);left:50%}}
+@media (max-width:520px){.landing-name{font-size:1.6rem}.landing-avatar{width:240px}}
+.lead{color:var(--muted);font-size:1.05rem;margin-top:6px}
+ .avatar{width:260px;border-radius:14px;border:1px solid rgba(6,50,58,.04);background:linear-gradient(180deg,#f3f7f8,#eef6f7);padding:18px}
+.badges span{display:inline-block;background:rgba(122,184,210,.10);padding:6px 10px;border-radius:12px;margin-right:8px;color:var(--accent-2);font-size:0.85rem}
+.section{background:var(--card);margin:28px auto;padding:26px;border-radius:12px;box-shadow:0 6px 18px var(--shadow)}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.timeline{list-style:none;padding:0;margin:0}
+.timeline li{display:flex;gap:18px;margin-bottom:18px}
+.time{min-width:120px;color:var(--muted);font-weight:600}
+.card{
+  background:linear-gradient(180deg,var(--card),#4e948d);/* warm subtle gradient */
+  padding:16px;border-radius:12px;border-left:4px solid rgba(1, 9, 10, 0.12);border:1px solid rgba(2, 8, 9, 0.14);
+  transition:transform .22s ease, box-shadow .22s ease;box-shadow:0 8px 24px rgba(6,50,58,.04);
+}
+/* 3D pop on hover for experience cards */
+.timeline li .card:hover{transform:translateY(-8px) rotateX(1deg);box-shadow:0 18px 44px rgba(6,50,58,.10)}
+.time{min-width:120px;color:var(--muted);font-weight:700;background:linear-gradient(180deg,#467c82,#397b98);padding:8px;border-radius:8px;align-self:start}
+/* Projects: grid of project cards. 'Tech' lines use a stronger color for legibility. */
+.project-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.project{
+  background:linear-gradient(180deg,var(--card-2),var(--card));
+  padding:16px;border-radius:12px;border-left:4px solid rgba(47,155,176,0.12);
+  border:1px solid rgba(6,50,58,.03);
+  transition:transform .18s, box-shadow .18s;
+} 
+.project:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(6,50,58,.07)}
+.project h3{margin:0 0 6px 0;display:flex;align-items:center;gap:10px;font-size:1.05rem}
+.project p.muted.small{color:#08323a; opacity:0.95; font-weight:600} 
+.icon{width:20px;height:20px;display:inline-block;flex:0 0 20px;color:var(--accent-color);vertical-align:middle}
+.icon use{fill:currentColor}
+.muted{color:var(--muted)}
+.small{font-size:0.95rem}
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.contact-form{display:grid;gap:12px}
+ .contact-form input,.contact-form textarea{padding:10px;border-radius:8px;border:1px solid rgba(6,50,58,.06);background:transparent;color:#08323a}
+.site-footer{padding:26px;color:#08323a}
+.site-footer p{font-weight:700}
+.flash{max-width:1100px;margin:12px auto;padding:10px;background:linear-gradient(90deg,#edf9fb,#ecf7f9);border-radius:8px;color:#08323a}
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(6,50,58,.35);visibility:hidden;opacity:0;transition:opacity .25s,visibility .25s}
+.modal[aria-hidden="false"]{visibility:visible;opacity:1}
+.modal-content{background:linear-gradient(180deg,var(--card),var(--card-2));padding:26px;border-radius:12px;max-width:760px;width:90%;color:#08323a;transform:translateY(8px);transition:transform .22s;box-shadow:0 18px 40px rgba(6,50,58,.08);border-left:4px solid rgba(47,155,176,0.14)}
+.modal[aria-hidden="false"] .modal-content{transform:none}
+.modal-close{background:transparent;border:none;color:var(--muted);font-size:18px;position:absolute;right:18px;top:18px}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease, transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* Typing cursor */
+.cursor{display:inline-block;margin-left:8px;color:var(--accent-color);font-weight:700;opacity:0.95}
+.typed{font-weight:600;color:#08323a}
+
+/* Avatar float */
+@keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+.floaty{animation:floaty 4.2s ease-in-out infinite}
+
+/* Compétences: barres de progression et labels (pourcentage mis en évidence) */
+/* Skill bars */
+.skill{margin-bottom:12px}
+.skill-label{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-weight:600}
+.skill-label .muted{color:#08323a; font-weight:700} 
+.skill-bar{height:10px;background:linear-gradient(90deg,#eef7f9,#f7fbfc);border-radius:8px;overflow:hidden;border:1px solid rgba(6,50,58,.04)}
+.bar-fill{width:0;height:100%;background:linear-gradient(90deg,#0f7f85,#125e63);transition:width 1.2s cubic-bezier(.2,.9,.3,1)}
+
+/* Counters */
+.stats{display:flex;gap:20px;margin-top:18px}
+.stat{background:linear-gradient(180deg,#fff,#fbfcfd);padding:10px 14px;border-radius:8px;text-align:center;min-width:86px}
+.stat .num{font-size:1.5rem;font-weight:700;color:var(--accent-color)}
+
+/* Scroll progress */
+.scroll-progress{position:fixed;left:0;top:0;height:4px;background:linear-gradient(90deg,var(--accent-color),var(--accent-2));width:0;z-index:9999;box-shadow:0 4px 18px rgba(74,163,216,.12)}
+
+/* Slight enhancement for project hover focus */
+.project:focus-within, .project:hover{outline:none;transform:translateY(-8px);box-shadow:0 12px 36px rgba(6,50,58,.07)}
+
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.info-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.nav-toggle{display:block}.nav-links{display:none}.container{padding:18px}}
+@media (max-width:480px){.avatar{width:160px}}
+

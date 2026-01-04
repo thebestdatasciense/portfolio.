@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil - Portfolio{% endblock %}
+
+{% block content %}
+<section class="hero hero-landing reveal">
+  <div class="hero-bg-title" aria-hidden="true">PORTFOLIO</div>
+  <div class="container landing-grid">
+    <div class="hero-left">
+      <h1 class="landing-name">Fatima‑ezzahrae Rhabiri</h1>
+    </div>
+
+    <div class="hero-right">
+      <img src="{{ url_for('static', filename='img/projects/me.jpg') }}" alt="Photo de profil" class="landing-avatar">
+    </div>
+  </div>
+
+  <a class="hero-arrow" href="#projects" aria-hidden="true">→</a>
+</section>
+
+<section id="about" class="section about container reveal">
+  <h2>Profil</h2>
+  <p>Étudiante en 3ᵉ année Bachelor Ingénierie Artificielle et Science des Données (3IASD) à l’EST d’Essaouira, intéressée par le Big Data, l’analyse de données et les systèmes intelligents. Je développe mes compétences à travers des projets académiques en traitement de données, programmation et apprentissage automatique.</p>
+
+  <div class="info-grid">
+    <div>
+      <h3>Formations</h3>
+      <p><strong>Diplôme Universitaire de Technologie — Ingénierie des données</strong><br>École Supérieure de Technologie (EST) El Kelaâ des Sraghna<br>Spécialisation : traitement des données, modélisation prédictive — Projets principaux : systèmes de recommandation (Python, Scikit-learn).</p>
+      <p><strong>Baccalauréat en Sciences Physiques (option internationale)</strong><br>Lycée Collégial El Merbouh</p>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section experience container reveal">
+  <h2>Expériences</h2>
+  <ul class="timeline">
+    <li class="reveal">
+      <div class="time">Juillet 2024</div>
+      <div class="card">
+        <h4>Stage d'initiation — Banque Populaire</h4>
+        <p>Développement d'un outil d'aide à la décision pour la recommandation de produits financiers; collecte et préparation des données, prototype de modèle et dashboard de visualisation pour validation métier.</p>
+      </div>
+    </li>
+    <li class="reveal">
+      <div class="time">15 Avr 2025     
+        - 15 Juin 2025</div>
+      <div class="card">
+        <h4>Stage technique — Menara</h4>
+        <p>Conception d'une application de recommandation et visualisations (Random Forest), optimisation des workflows d'analyse via automatisation en Python et pipelines ETL.</p>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<section id="projects" class="section projects container reveal">
+  <h2>Projets</h2>
+  <div class="project-list">
+    <article class="project reveal" data-slug="reco-ecommerce">
+      <h3><svg class="icon icon-code" aria-hidden="true"><use xlink:href="#icon-code"></use></svg> Plateforme e-commerce — Moteur de recommandation</h3>
+      <p>Conception et intégration d'un moteur hybride de recommandation (collaboratif + contenu) pour améliorer la conversion produit et la pertinence des suggestions.</p>
+      <p class="muted small">Tech: Python, Scikit-learn, Surprise, Pandas, APIs Flask</p>
+      <button class="btn btn-sm open-project">Détails</button>
+    </article>
+
+    <article class="project reveal" data-slug="visual-automation">
+      <h3><svg class="icon icon-gear" aria-hidden="true"><use xlink:href="#icon-gear"></use></svg> Automatisation des workflows d'analyse</h3>
+      <p>Pipeline d'automatisation pour extraction, nettoyage et génération de rapports visuels destinés aux équipes métiers — génération automatique de rapports périodiques.</p>
+      <p class="muted small">Tech: Python, Pandas, Matplotlib, PowerBI</p>
+      <button class="btn btn-sm open-project">Détails</button>
+    </article>
+
+    <article class="project reveal" data-slug="moderation-nlp">
+      <h3><svg class="icon icon-shield" aria-hidden="true"><use xlink:href="#icon-shield"></use></svg> Plateforme IA de modération de contenus (Hackathon)</h3>
+      <p>Lauréate du 2ème Prix au Hackathon25 OpenData (2025) : modération de contenus toxiques en utilisant des modèles de NLP et des pipelines d'ingestion temps-réel.</p>
+      <p class="muted small">Tech: Python, NLP, Transformers, Flask</p>
+      <button class="btn btn-sm open-project">Détails</button>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="section skills container reveal">
+  <h2>Compétences & Outils</h2>
+  <div class="skills-grid">
+    <div>
+      <h4>Langages</h4>
+      <div class="skill">
+        <div class="skill-label">Python <span class="muted">90%</span></div>
+        <div class="skill-bar" data-percent="90"><div class="bar-fill"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label">SQL <span class="muted">80%</span></div>
+        <div class="skill-bar" data-percent="80"><div class="bar-fill"></div></div>
+      </div>
+    </div>
+    <div>
+      <h4>Data & ML</h4>
+      <div class="skill">
+        <div class="skill-label">Machine Learning <span class="muted">85%</span></div>
+        <div class="skill-bar" data-percent="85"><div class="bar-fill"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-label">NLP & Transformers <span class="muted">70%</span></div>
+        <div class="skill-bar" data-percent="70"><div class="bar-fill"></div></div>
+      </div>
+    </div>
+    <div>
+      <h4>Bases de données</h4>
+      <div class="skill">
+        <div class="skill-label">MySQL / Oracle <span class="muted">78%</span></div>
+        <div class="skill-bar" data-percent="78"><div class="bar-fill"></div></div>
+      </div>
+    </div>
+    <div>
+      <h4>Big Data & Visualisation</h4>
+      <div class="skill">
+        <div class="skill-label">Spark / Hadoop <span class="muted">60%</span></div>
+        <div class="skill-bar" data-percent="60"><div class="bar-fill"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Qualités personnelles</h3>
+  <ul>
+    <li>Travail collaboratif (Agile/Scrum)</li>
+    <li>Résolution de problèmes complexes</li>
+    <li>Rigueur et curiosité scientifique</li>
+  </ul>
+
+  <h3>Langues</h3>
+  <p>Arabe (maternelle) • Français (intermédiaire) • Anglais (intermédiaire)</p>
+</section>
+
+<section id="additional" class="section container reveal">
+  <h2>Veille et participations</h2>
+  <p>Veille technologique : IA, IoT, cybersécurité. Participation active à des hackathons : Lauréate du 2ème Prix au Hackathon25 OpenData (2025) pour une solution de modération de contenu utilisant NLP.</p>
+</section>
+
+<section id="contact-legacy" class="section contact container reveal" style="display:none">
+  <h2>Contact</h2>
+  <div class="contact-card">
+  <form id="contactForm" class="contact-form" method="post" action="{{ url_for('contact') }}">
+    <label for="name">Nom</label>
+    <input id="name" name="name" required>
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required></textarea>
+
+    <button type="submit" class="btn">Envoyer le message</button>
+  </form>
+
+  <div class="contact-footer">
+    <hr class="sep">
+    <div class="contact-links">
+      <a href="mailto:rhabirifatimaezzahrae@gmail.com" class="contact-link" aria-label="Email">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-email"></use></svg>
+        <span class="label">rhabirifatimaezzahrae@gmail.com</span>
+      </a>
+
+      <a href="tel:+212681735367" class="contact-link" aria-label="Téléphone">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-phone"></use></svg>
+        <span class="label">+212 681-735367</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener" class="contact-link contact-link--linkedin" aria-label="LinkedIn">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-linkedin"></use></svg>
+        <span class="label">LinkedIn</span>
+      </a>
+
+      <a href="https://github.com/your-username" target="_blank" rel="noopener" class="contact-link contact-link--github" aria-label="GitHub">
+        <svg class="icon" aria-hidden="true"><use xlink:href="#icon-github"></use></svg>
+        <span class="label">GitHub</span>
+      </a>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- Project modal -->
+<div id="projectModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Fermer">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+{% endblock %}
